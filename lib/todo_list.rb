@@ -20,5 +20,7 @@ class TodoList
 
   def give_up!
     # Marks all todos as complete
+    fail "There are no tasks to give up on!" if @todos.empty?
+    @todos.each { |todo| todo.mark_done! }
   end
 end
